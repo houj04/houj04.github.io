@@ -1,4 +1,9 @@
+title: houj04's blog
+email: houj04#foxmail.com
+baseurl: ""
+url: "houj04.github.io"
+github_username: houj04
+
+# Build settings
 markdown: kramdown
-#markdown: maruku
-markdown_ext: markdown,mkd,mkdn,md
 

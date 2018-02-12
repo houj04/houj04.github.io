@@ -1,6 +1,7 @@
 ﻿---
-layout: default
-title: 你好，世界
+layout: post
+title: "lr"
+categories: mypost
 ---
 
 # Logistic Regression
