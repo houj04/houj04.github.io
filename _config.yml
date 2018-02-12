@@ -1,2 +1,4 @@
-baseurl: ""
-markdown: kramdown
+# markdown: kramdown
+markdown: maruku
+markdown_ext: markdown,mkd,mkdn,md
+
