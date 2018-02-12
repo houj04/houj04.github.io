@@ -1,4 +1,4 @@
-# markdown: kramdown
-markdown: maruku
+markdown: kramdown
+#markdown: maruku
 markdown_ext: markdown,mkd,mkdn,md
 
