@@ -1,1 +1,3 @@
 baseurl: /houj04.github.io
+redcarpet:
+    extensions: [tables]
