@@ -1,7 +1,11 @@
+# Site settings
 title: houj04's blog
 email: houj04#foxmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  this is a blog.
+  obviously.
 baseurl: ""
-url: "houj04.github.io"
+url: "https://houj04.github.io"
 github_username: houj04
 
 # Build settings

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "lr"
 categories: mypost
@@ -165,7 +165,7 @@ $$\dfrac{\partial L(w)}{\partial w_j} = \dfrac{1}{1+e^{w \cdot x}}e^{w \cdot x}x
 
 第一个片段，如何计算预测值。
 
-``` c++
+{% highlight c++ %}
 float_type LRTrainNode::sparse_pred(const Instance& ins) const {
     float_type ret = 0.0;
     for (auto& id : ins.ids) {
@@ -174,11 +174,11 @@ float_type LRTrainNode::sparse_pred(const Instance& ins) const {
     }
     return Util::sigmoid(ret);
 }
-```
+{% endhighlight %}
 
 第二个片段，如何计算梯度。
 
-``` c++
+{% highlight c++ %}
 for (const auto& ins : lines) {
     ctr = sparse_pred(ins);
     // ctr - label
@@ -193,7 +193,7 @@ for (const auto& ins : lines) {
     // ctr, show, click
     v.add_single_point(ctr, 1, ins.label);
 }
-```
+{% endhighlight %}
 
 ## 损失函数2
 
