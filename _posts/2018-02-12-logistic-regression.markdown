@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "lr"
+title: "Logistic Regression"
 categories: mypost
 ---
 
