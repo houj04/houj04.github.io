@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Germany Tank Problem"
+title: "德国坦克问题"
 categories: mypost
 ---
 
-# Germany Tank Problem
+# German Tank Problem
 
 [TOC]
 
