@@ -153,7 +153,7 @@ $$w^{*} = \arg\limits_{w}\max L(w) = \arg\limits_{w}\min (-L(w)) = \arg\limits_{
 
 计算导数：这里的$w \cdot x$表示$w$向量和$x$向量内积，对单个$w_j$求导数：
 
-注意到$(\ln a)' = \dfrac{1}{a}$，并且$(e^a) ' = e^a$。
+注意到$(\ln a)' = \dfrac{1}{a}$，并且$(e^a)' = e^a$。
 
 $$\dfrac{\partial L(w)}{\partial w_j} = \dfrac{1}{1+e^{w \cdot x}}e^{w \cdot x}x_j - y_i x_j = \dfrac{e^{w \cdot x}}{1+e^{w \cdot x}} x_j - y_i x_j = x_j(\dfrac{1}{1+e^{-w \cdot x}} - y_i)$$
 
