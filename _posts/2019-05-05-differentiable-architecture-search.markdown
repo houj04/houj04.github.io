@@ -11,6 +11,7 @@ categories: mypost
 * 文章标题：DARTS: Differentiable Architecture Search
 * 作者：Hanxiao Liu, Karen Simonyan, Yiming Yang
 * 发表于：ICLR 2019
+* 参考：https://arxiv.org/abs/1806.09055
 
 ## 摘要
 
