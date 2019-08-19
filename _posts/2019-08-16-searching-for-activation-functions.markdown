@@ -14,11 +14,11 @@ categories: mypost
 
 ## 摘要
 
-深度神经网络（deep network）中的激活函数（activation function）的选择，对网络的训练和任务的效果有很大的影响。目前，最成功并且最广泛应用的激活函数是Rectified Linear Unit（ReLU）。尽管有很多手工设计的用来替换ReLU的激活函数被提出，但是没有一个能成功替换掉，因为收益不稳定。在本文的工作中，作者们提出了一个自动化的搜索技术，用来发现新的激活函数。使用一个exhaustive和强化学习（reinforcement learning）结合的方法，作者们发现了多个新的激活函数。作者们通过进行实验性的验证的方法，使用发现的最好的激活函数，来对这些搜索结果进行有效性的验证。实验显示找到的最好的激活函数，$f(x)=x\cdot sigmoid(\beta x)$，起名为Swish，在一系列有挑战性的数据集上，在更深的模型上，表现比ReLU要好。举例来说，简单把ReLU替换成Swish，可以在ImageNet数据集上把Mobile NASNet-A的top-1分类正确率提升0.9%，吧Inception-ResNet-v2提升0.6%。Swish所具有的简单性，以及它和ReLU的相似性，使得在任意的神经网络之哦跟你都可以简单地把ReLU替换成Swish。
+深度神经网络（deep network）中的激活函数（activation function）的选择，对网络的训练和任务的效果有很大的影响。目前，最成功并且最广泛应用的激活函数是Rectified Linear Unit（ReLU）。尽管有很多手工设计的用来替换ReLU的激活函数被提出，但是没有一个能成功替换掉，因为收益不稳定（inconsistent gain）。在本文的工作中，作者们提出了一个自动化的搜索技术，用来发现新的激活函数。使用一个遍历（exhaustive）和强化学习（reinforcement learning）结合的方法，作者们发现了多个新的激活函数。作者们通过进行实验性的验证的方法，使用发现的最好的激活函数，来对这些搜索结果进行有效性的验证。实验显示找到的最好的激活函数，$f(x)=x\cdot sigmoid(\beta x)$，起名为Swish，在一系列有挑战性的数据集上，在更深的模型上，表现比ReLU要好。举例来说，简单把ReLU替换成Swish，可以在ImageNet数据集上把Mobile NASNet-A的top-1分类正确率提升0.9%，把Inception-ResNet-v2提升0.6%。Swish所具有的简单性，以及它和ReLU的相似性，使得在任意的神经网络中都可以简单地把ReLU替换成Swish。
 
 ## 1 介绍
 
-在每个深度神经网络的核心中，都有一个线性变换（linear transformation）和紧随其后的激活函数$f(\cdot)$。激活函数在训练深度神经网络中起到一个很重要的作用。目前，最成功也是应用最广泛的激活函数是Rectifiled Linear Unit（ReLU），定义是$f(x)=max(x,0)$。ReLu的使用使得现代的神经网络可以进行完全的监督训练（supervised training）。用ReLu的深度神经网络更容易优化，相对于使用sigmoid或者tanh来说，因为当ReLU函数的输入是正的（positive）的时候，梯度是可以直接流过去的。由于它的简单和高效率，ReLU成为了通常情况下的默认激活函数，在整个深度学习（deep learning）界都在使用。
+在每个深度神经网络的核心中，都有一个线性变换（linear transformation）和紧随其后的激活函数$f(\cdot)$。激活函数在训练深度神经网络中起到一个很重要的作用。目前，最成功也是应用最广泛的激活函数是Rectifiled Linear Unit（ReLU），定义是$f(x)=\max(x,0)$。ReLu的使用使得现代的神经网络可以进行完全的监督训练（supervised training）。用ReLu的深度神经网络更容易优化，相对于使用sigmoid或者tanh来说，因为当ReLU函数的输入是正的（positive）的时候，梯度是可以直接流过去的。由于它的简单和高效率，ReLU成为了通常情况下的默认激活函数，在整个深度学习（deep learning）界都在使用。
 
 尽管有大量的激活函数被提出，希望用来替代掉ReLu，但是没有一个能获得类似ReLU的广泛的应用。很多使用者喜欢ReLU的简单以及可靠性，因为其他激活函数带来的性能提升在不同的模型和数据集上并不稳定（inconsistent）。
 
